@@ -1,0 +1,67 @@
+{
+  "baseline_model": "groq/llama-3.3-70b-versatile (zero-shot)",
+  "baseline_accuracy": 1.0,
+  "baseline_parseable": 34,
+  "finetuned_model": "distilbert-base-uncased (fine-tuned 3 epochs)",
+  "finetuned_accuracy": 0.8824,
+  "improvement": -0.1176,
+  "test_set_size": 34,
+  "label_map": {
+    "analysis": 0,
+    "hot_take": 1,
+    "reaction": 2
+  },
+  "baseline_per_class_metrics": {
+    "analysis":  { "precision": 1.0, "recall": 1.0, "f1": 1.0, "support": 12 },
+    "hot_take":  { "precision": 1.0, "recall": 1.0, "f1": 1.0, "support": 11 },
+    "reaction":  { "precision": 1.0, "recall": 1.0, "f1": 1.0, "support": 11 }
+  },
+  "finetuned_per_class_metrics": {
+    "analysis":  { "precision": 1.0,   "recall": 0.917, "f1": 0.957, "support": 12 },
+    "hot_take":  { "precision": 0.733, "recall": 1.0,   "f1": 0.846, "support": 11 },
+    "reaction":  { "precision": 1.0,   "recall": 0.727, "f1": 0.842, "support": 11 }
+  },
+  "confusion_matrix": {
+    "labels": ["analysis", "hot_take", "reaction"],
+    "matrix": [
+      [11, 1, 0],
+      [ 0,11, 0],
+      [ 0, 3, 8]
+    ]
+  },
+  "wrong_predictions": 4,
+  "sample_predictions": [
+    {
+      "text": "Chet Holmgren is going to be a bust. He's too skinny to guard real NBA bigs and his offensive game against elite perimeter defenders is completely untested.",
+      "true_label": "hot_take", "pred_label": "hot_take", "confidence": 0.414, "correct": true
+    },
+    {
+      "text": "The value of the mid-level exception has been systematically overestimated by front offices. Teams using the full MLE for 4-year deals average a 0.3 VORP gain per year after the first...",
+      "true_label": "analysis", "pred_label": "analysis", "confidence": 0.368, "correct": true
+    },
+    {
+      "text": "Oh my god oh my god oh my god. They just blew a 20-point lead in the fourth quarter. I'm actually shaking right now.",
+      "true_label": "reaction", "pred_label": "reaction", "confidence": 0.385, "correct": true
+    },
+    {
+      "text": "I forgot about this game until the fourth quarter. Turned it on with 4 minutes left. Nearly had a heart attack. Great Tuesday.",
+      "true_label": "reaction", "pred_label": "hot_take", "confidence": 0.354, "correct": false
+    },
+    {
+      "text": "LETS GOOOOOO! That's what I'm talking about. Championship mentality right there!",
+      "true_label": "reaction", "pred_label": "hot_take", "confidence": 0.38, "correct": false
+    },
+    {
+      "text": "The league's salary cap relative to team revenue has stayed constant at approximately 44% since the 2017 CBA. Teams chasing max-level contracts should understand they're competing in a system explicitly designed to prevent any single team from monopolizing elite talent.",
+      "true_label": "analysis", "pred_label": "hot_take", "confidence": 0.40, "correct": false
+    },
+    {
+      "text": "I have never been more nervous watching a sporting event in my entire life and I grew up a Cubs fan.",
+      "true_label": "reaction", "pred_label": "hot_take", "confidence": 0.36, "correct": false
+    },
+    {
+      "text": "My blood pressure right now. Why do I keep watching this team? Why do I do this to myself every single year?",
+      "true_label": "reaction", "pred_label": "reaction", "confidence": 0.367, "correct": true
+    }
+  ]
+}
